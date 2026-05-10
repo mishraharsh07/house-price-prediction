@@ -38,11 +38,13 @@ st.markdown("""
     """, unsafe_allow_html=True)
 
 # Load AI Assets
-SAVE_DIR = r'C:\Users\ASUS\house-price-prediction'
+SAVE_DIR = os.path.abspath(os.path.dirname(__file__))
 
 @st.cache_resource
 def load_assets():
-    model = joblib.load(os.path.join(SAVE_DIR, 'house_price_model.pkl'))
+    import bz2
+    with bz2.BZ2File(os.path.join(SAVE_DIR, 'house_price_model.pkl.bz2'), 'rb') as f:
+        model = joblib.load(f)
     le_city = joblib.load(os.path.join(SAVE_DIR, 'le_city_indian.pkl'))
     feature_names = joblib.load(os.path.join(SAVE_DIR, 'feature_names_indian.pkl'))
     return model, le_city, feature_names
