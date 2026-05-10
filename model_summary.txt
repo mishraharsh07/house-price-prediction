@@ -1,0 +1,7 @@
+House Price Prediction Model Summary
+====================================
+Algorithm: HistGradientBoostingRegressor
+R2 Score: 0.7419
+MAE: $87,425.84
+RMSE: $141,801.20
+Features used: ['bedrooms', 'bathrooms', 'sqft_living', 'sqft_lot', 'floors', 'waterfront', 'view', 'condition', 'sqft_above', 'sqft_basement', 'yr_built', 'yr_renovated', 'city', 'statezip', 'year', 'month', 'house_age', 'is_renovated', 'years_since_renovation', 'total_sqft']
